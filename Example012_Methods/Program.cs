@@ -109,32 +109,32 @@
 //Задача 3. Упорядочивание данных внутри массива
 //Алгоритм сортировки методом минимакса или иногда просто называют методом максимального
 
-int[] arr = {1, 5, 4, 3, 2, 6, 7, 1, 1};
+int[] arr = { 1, 5, 4, 3, 2, 6, 7, 1, 1 };
 void PrintArray(int[] array)        //метод вывода на экран массива
 {
-int count = array.Length;
-for (int i = 0; i < count; i++)
-{
-Console.Write($"{array[i]}");
-}
-Console.WriteLine();
+    int count = array.Length;
+    for (int i = 0; i < count; i++)
+    {
+        Console.Write($"{array[i]}");
+    }
+    Console.WriteLine();
 }
 void SelectionSort(int[] array)     //упорядочивание массива
 {
-for (int i = 0; i < array.Length - 1; i++)
-{
-int minPosition = i;
-for (int j = i+1; j < array.Length; j++)
-{
-if(array[j] < array[minPosition]) 
-{
-minPosition = j;
-}
-}
-int temporary = array[i];           //замена через временное хранилище temporary
-array[i] = array[minPosition];
-array[minPosition] = temporary;
-}
+    for (int i = 0; i < array.Length - 1; i++)
+    {
+        int minPosition = i;
+        for (int j = i + 1; j < array.Length; j++)
+        {
+            if (array[j] < array[minPosition])
+            {
+                minPosition = j;
+            }
+        }
+        int temporary = array[i];           //замена через временное хранилище temporary
+        array[i] = array[minPosition];
+        array[minPosition] = temporary;
+    }
 }
 PrintArray(arr);
 SelectionSort(arr);
